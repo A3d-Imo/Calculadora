@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Imóvel</title>
+      <link rel="stylesheet" href="style.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>  
+</head>
+<body>
+    <div class="container">
+        <div class="bar">
+            <table>
+                <tr>
+                    <th>
+                        <div class="input-box">
+                            <h2>Objeto de Estudo</h2>
+                            <label>Tipo do Imóvel:</label>
+                            <div class="input-container">
+                                <input type="text" id="tipoImovel" required>
+                                <label for="tipoImovel" class="label">Ex: Casa Térrea</label>
+                                <div class="underline"></div>
+                            </div>
+
+                            <label>Endereço:</label>
+                            <div class="input-container">
+                                <input type="text" id="endereco" required>
+                                <label for="endereco" class="label">Endereço do imóvel</label>
+                                <div class="underline"></div>
+                            </div>
+
+                            <label>Área do Terreno (m²):</label>
+                            <div class="input-container">
+                                <input type="text" id="areaTerreno" required oninput="formatarNumeroBR(this)">
+                                <label for="areaTerreno" class="label">Área do terreno em m²</label>
+                                <div class="underline"></div>
+                            </div>
+
+                            <label>Área Construída (m²):</label>
+                            <div class="input-container">
+                                <input type="text" id="areaConstruida" required oninput="formatarNumeroBR(this)">
+                                <label for="areaConstruida" class="label">Área construída em m²</label>
+                                <div class="underline"></div>
+                            </div>
+                        </div>
+                    </th>
+                <th><div class="result-area" >
+                    <div id="loading" class="hidden">
+                        <div class="wrapper">
+                            <div class="circle"></div>
+                            <div class="circle"></div>
+                            <div class="circle"></div>
+                            <div class="shadow"></div>
+                            <div class="shadow"></div>
+                            <div class="shadow"></div>
+                        </div>
+                    </div>
+                    <div id="resultado" class="result"></div>
+                    
+                </div></th>
+            </tr>
+            <tr>
+                <th>
+                <div class="input-box">
+                    <h2>Amostras</h2>
+                    <div id="amostras">
+                        <div class="amostra">
+                            <h3 class="igual">Amostra 1</h3>
+                
+                            <label>Valor do Imóvel:</label>
+                
+                    <div class="input-container">
+                            <input type="text" id="input" class="valorImovel" required="" oninput="formatarNumeroBR(this)">
+                    <label for="input" class="label">Valor do imóvel</label>
+                    <div class="underline"></div>
+                    </div>
+                
+                            <label>Área (m²):</label>
+                
+                    <div class="input-container">
+                            <input type="text" id="input" class="areaImovel" required="" oninput="formatarNumeroBR(this)">
+                    <label for="input" class="label">Área do imóvel</label>
+                    <div class="underline"></div>
+                    </div>
+                        </div>
+                    </div>
+                    <button onclick="adicionarAmostra()" class="button">Adicionar Amostra</button>
+                    <button onclick="calcularPrecoEIrParaTopo()" class="button" >Calcular</button>
+                   
+                   
+                
+               
+
+                <div class="theme-opt">
+                    <table class="theme-opt">
+                        <tr>
+                            <th>
+                                    <div class="theme-switcher">
+                                    <button id="toggleTheme" class="button">🌞 Modo Claro</button>
+                                    </div>
+                            </th>
+                            <th>
+                                    <div class="theme-reset">
+                                    <button onclick="resetarFormulario()" class="button">🚀 Resetar</button>
+                                    </div>
+                            </th>
+                            <th>
+                                    <div class="theme-pdf">
+                                    <button onclick="exportarPDF()" class="button">Exportar PDF</button>
+                                    </div>
+                            </th>
+                            <th>
+                                     <div class="theme-config">
+                                    <button class="button" onclick="toggleConfiguracoes()">Informações de Usuario</button>
+                                     </div>
+                                  <!-- 🔽 Área de Configurações Recolhida -->
+                                     <div id="configuracoes" class="config-area hidden">
+                                     <h3>Configurações</h3>
+                                <!-- Nome do Usuário -->
+                                    <label>Seu Nome:</label>
+                                     <div class="input-container">
+                                    <input type="text" id="nomeUsuario" placeholder="Digite seu nome">
+                                    <div class="underline"></div>
+                                </div>
+                            </div>
+                            </th>
+                        </tr>
+                    </table>
+                </div>
+
+            </tr>
+         </table>   
+
+            
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    
+<script src='script.js'></script>
+</body>
+</html>

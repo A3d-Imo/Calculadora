@@ -1,0 +1,537 @@
+ body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 10px;
+            background-color: #f9f9f9; /* Fundo quase branco */
+            color: #000; /* Texto preto */
+        }
+        .amostra {
+            
+            height: 260px;
+
+        }
+        label {
+            display: block;
+            margin-bottom: 20px;
+        }
+        input {
+            padding: 8px;
+            margin-bottom: 10px;
+            width: calc(100% - 16px);
+            border: 1px solid #000000;
+            border-radius: 4px;
+        }
+        
+        #resultado {
+          margin-top: 20px;
+          padding: 10px;
+          background-color: #54545400;
+          
+          border-radius: 4px;
+          
+         
+         
+
+          display: none; /* Oculta inicialmente */
+          
+      }
+
+
+      .input-container {
+        position: relative;
+        margin: 10px auto;
+        width: 250px;
+    }
+
+    .input-container input {
+      font-size: 15px;
+      width: 100%;
+      border: none;
+      border-bottom: 2px solid #000;
+      padding: 5px 0;
+      background-color: transparent;
+      outline: none;
+  }
+
+  .input-container .label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #666;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.input-container input:focus ~ .label,
+.input-container input:valid ~ .label {
+    top: -20px;
+    font-size: 12px;
+    color: #000;
+}
+
+.input-container .underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #000000;
+  transform: scaleX(0);
+  transition: all 0.3s ease;
+}
+
+.input-container .underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #000;
+  transform: scaleX(0);
+  transition: all 0.3s ease;
+}
+
+.input-container input:focus ~ .underline,
+.input-container input:valid ~ .underline {
+  transform: scaleX(1);
+}
+
+
+
+
+/* From Uiverse.io by dhanushrs1 */ 
+.button {
+  --color: #61f230;
+  padding: 0.8em 2em;
+  background-color: transparent;
+  border-radius: 0.6em;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-weight: 700;
+  font-size: 13px;
+  border: 2px solid var(--color);
+  font-family: inherit;
+  text-transform: uppercase;
+  color: #000000;
+  z-index: 1;
+  display: inline-block;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+}
+
+.button::before,
+.button::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  background-color: var(--color);
+  transition: 0.7s ease-in-out;
+}
+
+.button::before {
+  top: -1em;
+  left: -1em;
+}
+
+.button::after {
+  left: calc(100% + 1em);
+  top: calc(100% + 1em);
+}
+
+.button:hover::before,
+.button:hover::after {
+  height: 410px;
+  width: 410px;
+}
+
+.button:hover {
+  background: linear-gradient(135deg, #3f9b20, #4c843a);
+  color: #ffffff;
+  border-color: #0dff00;
+  box-shadow:
+    0 6px 15px rgba(49, 255, 46, 0.4),
+    0 8px 24px rgba(34, 174, 32, 0.4);
+  transform: translateY(-3px);
+}
+
+.button:active {
+  transform: scale(0.97);
+  filter: brightness(0.85);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, #2eff4a, #5cff7d);
+}
+
+.button:focus {
+  outline: none;
+  border-color: #72da80;
+  box-shadow: 0 0 0 4px rgba(46, 255, 119, 0.3);
+}
+
+
+
+.wrapper {
+  width: 200px;
+  height: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  border-radius: 50%;
+  background-color: #6c6c6c;
+  left: 15%;
+  transform-origin: 50%;
+  animation: circle7124 .5s alternate infinite ease;
+}
+
+@keyframes circle7124 {
+  0% {
+    top: 60px;
+    height: 5px;
+    border-radius: 50px 50px 25px 25px;
+    transform: scaleX(1.7);
+  }
+
+  40% {
+    height: 20px;
+    border-radius: 50%;
+    transform: scaleX(1);
+  }
+
+  100% {
+    top: 0%;
+  }
+}
+
+.circle:nth-child(2) {
+  left: 45%;
+  animation-delay: .2s;
+}
+
+.circle:nth-child(3) {
+  left: auto;
+  right: 15%;
+  animation-delay: .3s;
+}
+
+.shadow {
+  width: 20px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: rgba(0,0,0,0.9);
+  position: absolute;
+  top: 62px;
+  transform-origin: 50%;
+  z-index: -1;
+  left: 15%;
+  filter: blur(1px);
+  animation: shadow046 .5s alternate infinite ease;
+}
+
+@keyframes shadow046 {
+  0% {
+    transform: scaleX(1.5);
+  }
+
+  40% {
+    transform: scaleX(1);
+    opacity: .7;
+  }
+
+  100% {
+    transform: scaleX(.2);
+    opacity: .4;
+  }
+}
+
+.shadow:nth-child(4) {
+  left: 45%;
+  animation-delay: .2s
+}
+
+.shadow:nth-child(5) {
+  left: auto;
+  right: 15%;
+  animation-delay: .3s;
+}
+
+
+
+  .container {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;    /* Centraliza verticalmente */
+    min-height: 100vh;      /* Garante altura mínima de 100% da tela */
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+
+
+.result-area {
+
+  
+  display: flex;
+  flex-direction: column;
+  background-color:#f9f9f9;
+  padding: 5px;
+  border-radius: 20px;
+  height: 460px;
+  width: 200px;
+
+  
+}
+
+.bar{
+  background-color: #e8f5e9; /* Verde claro */
+  padding: 80px;
+  border-radius: 20px;
+  padding: 15px;
+  
+  
+}
+
+
+.hidden {
+  display: none;
+}
+
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  background-color:#f9f9f9;
+  padding: 5px;
+  border-radius: 20px;
+}
+
+
+.igual {
+ text-align: center;
+ font-size: 20px;
+ font-weight: bolder;
+
+}
+
+.resposta{
+  text-align: center;
+
+}
+
+
+
+
+.theme-switcher {
+  position: fixed; /* Fixa a posição na tela */
+  top: 20px;       /* Define a distância do topo */
+  right: 20px;     /* Define a distância da borda direita */
+  z-index: 1000;   /* Garante que fique acima de outros elementos */
+}
+
+.theme-switcher .button {
+  margin: 0;       /* Remove margens para evitar deslocamento */
+}
+
+
+.theme-reset {
+  position: fixed; /* Fixa a posição na tela */
+  top: 70px;       /* Define a distância do topo */
+  right: 20px;     /* Define a distância da borda direita */
+  z-index: 1000;   /* Garante que fique acima de outros elementos */
+}
+
+.theme-reset .button {
+  margin: 0;       /* Remove margens para evitar deslocamento */
+}
+
+.theme-pdf {
+  position: fixed; /* Fixa a posição na tela */
+  top: 120px;       /* Define a distância do topo */
+  right: 20px;     /* Define a distância da borda direita */
+  z-index: 1000;   /* Garante que fique acima de outros elementos */
+}
+
+.theme-pdf .button {
+  margin: 0;       /* Remove margens para evitar deslocamento */
+}
+
+.theme-config {
+  position: fixed; /* Fixa a posição na tela */
+  top: 170px;       /* Define a distância do topo */
+  right: 20px;     /* Define a distância da borda direita */
+  z-index: 1000;   /* Garante que fique acima de outros elementos */
+}
+
+.theme-config .button {
+  margin: 0;       /* Remove margens para evitar deslocamento */
+}
+
+.theme-opt{
+  background-color: #b6ebaf;
+  padding: 80px;
+  border-radius: 20px;
+  padding: 15px;
+  position: fixed; /* Fixa a posição na tela */
+  top: 170px;       /* Define a distância do topo */
+  right: 20px;     /* Define a distância da borda direita */
+ 
+}
+.hidden {
+  display: none;
+}
+
+/* Estilizando a área de configurações recolhível */
+.config-area {
+  background-color: #f1f1f1;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  position: fixed; /* Fixa a posição na tela */
+  top: 220px;       /* Define a distância do topo */
+  right: 20px;     /* Define a distância da borda direita */
+  z-index: 1000;   /* Garante que fique acima de outros elementos */
+}
+
+
+
+
+/* Tema Claro (padrão) */
+:root {
+  --bg-color: #f9f9f9;
+  --text-color: #333;
+  --sidebar-color: #e8f5e9;
+  --button-bg: #61f230;
+  --button-hover: #4caf50;
+  --bar-bg: #e8f5e9;
+  --input-box-bg: #f9f9f9;
+  --result-area-bg: #f9f9f9;
+  --amostra-bg: #f9f9f9;
+}
+
+/* Tema Escuro */
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #f9f9f9;
+  --sidebar-color: #1e1e1e;
+  --button-bg: #bb86fc;
+  --button-hover: #985eff;
+  --bar-bg: #2e2e2e;
+  --input-box-bg: #3a3a3a;
+  --result-area-bg: #252525;
+  --amostra-bg: #303030;
+}
+
+
+.config-area {
+  background-color: var(--bar-bg);
+  color: var(--text-color);
+  border-radius: 20px;
+  padding: 15px;
+  transition: background-color 0.3s, color 0.3s;
+
+}
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.bar, .input-box, .result-area, .amostra {
+  background-color: var(--bar-bg);
+  color: var(--text-color);
+  border-radius: 20px;
+  padding: 15px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+label, h2, h3, .resposta, .label {
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: var(--button-bg);
+  border: none;
+  border-radius: 4px;
+  color: var(--text-color);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button:hover {
+  background-color: var(--button-hover);
+}
+
+.input-container input[type="text"] {
+  font-size: 15px;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid var(--text-color);
+  padding: 5px 0;
+  background-color: transparent;
+  color: var(--text-color);
+  outline: none;
+  transition: border-color 0.3s, color 0.3s;
+}
+
+.input-container .label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.input-container input[type="text"]:focus ~ .label,
+.input-container input[type="text"]:valid ~ .label {
+  top: -20px;
+  font-size: 11px;
+}
+
+.input-container .underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: var(--text-color);
+  transform: scaleX(0);
+  transition: all 0.3s ease;
+}
+
+.input-container input[type="text"]:focus ~ .underline,
+.input-container input[type="text"]:valid ~ .underline {
+  transform: scaleX(1);
+}
+
+
+html ::-webkit-scrollbar {
+  width: 10px;
+}
+
+html ::-webkit-scrollbar-thumb {
+  border-radius: 50px;
+  background: #6ea973;
+}
+
+html ::-webkit-scrollbar-track {
+  background: #ededed;
+}
